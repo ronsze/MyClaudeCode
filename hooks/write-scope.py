@@ -6,7 +6,7 @@
 #   플러그인 에이전트는 frontmatter hooks를 가질 수 없어 플러그인 hooks.json에서 에이전트별로 건다.
 #   프로젝트 `.claude/write-scope.json`에 `{"<에이전트>": ["<정규식>", "!<정규식>"]}`가 있으면 그 에이전트의 인수 패턴을 대체한다.
 # 판정 불가 시(file_path 없음, JSON 파싱 실패): 통과. 이 훅은 경계 강제이지 도구 검증이 아니다.
-# 검증: `echo '{"agent_type":"docs-sync","tool_input":{"file_path":"<허용 밖 경로>"}}' | hooks/write-scope.py --agent docs-sync '<허용 정규식>'`가
+# 검증: `echo '{"agent_type":"test-engineer","tool_input":{"file_path":"<허용 밖 경로>"}}' | hooks/write-scope.py --agent test-engineer '<허용 정규식>'`가
 #   exit 2, 허용 경로가 exit 0, agent_type이 다른 입력이 exit 0인지 확인한다.
 import json
 import os

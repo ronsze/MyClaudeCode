@@ -34,10 +34,6 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/write-scope.py\" --agent docs-sync '^docs/.*[.]md$' '(^|/)README[.]md$' '!^docs/specs/'"
-          },
-          {
-            "type": "command",
             "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/write-scope.py\" --agent test-engineer '(^|/)src/test/' '(^|/)tests?/' '(^|/)__tests__/' '[._]test[.][a-z]+$' 'Test[.][a-z]+$'"
           }
         ]

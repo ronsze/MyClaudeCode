@@ -9,7 +9,7 @@
     {
       "name": "my-claude-code",
       "source": "./",
-      "description": "프로젝트 무관 개발 절차 스킬(implement·merge·diagnose·trello)과 하네스 규율(harness·feedback), 리뷰·테스트·문서 동기화·Figma 대조 에이전트, 강제 훅."
+      "description": "프로젝트 무관 개발 절차 스킬(implement·merge·diagnose·trello)과 하네스 규율(harness·feedback), 리뷰·테스트·Figma 대조 에이전트, 강제 훅."
     }
   ]
 }

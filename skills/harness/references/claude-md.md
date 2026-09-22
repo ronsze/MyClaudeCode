@@ -30,11 +30,10 @@ my-claude-code 플러그인의 스킬·에이전트는 프로젝트 고유 값�
 | 커밋 제목 | 제목 정규식 | merge |
 | 잔류물 패턴 | 병합 diff에서 막을 패턴 | merge |
 | 계약 | implement 수준 판정에서 계약으로 보는 것의 목록 — 프로젝트 아키텍처가 정한다 | implement |
-| 코드 스타일 | 문서 경로 | implement ④, code-reviewer |
-| 아키텍처 | 문서 경로 | code-reviewer |
-| 테스트 문서 | 문서 경로 | test-engineer, implement ② |
-| 문서 인덱스 | 상황별 참조 문서 표가 있는 문서 경로 | implement ② |
-| 문서 작성 가이드 | 문서 경로 | docs-sync |
+| 코드 스타일 | 문서 경로 (있을 때만) | implement, code-reviewer |
+| 아키텍처 | 문서 경로 (있을 때만) | implement, code-reviewer |
+| 테스트 문서 | 문서 경로 (있을 때만) | implement, test-engineer |
+| 스펙 위치 | 복합 수준 계획 파일을 두는 디렉토리 | implement ② |
 | API 스펙 | 실제 응답 스키마를 확인하는 방법 | implement ① |
 | 공용 UI | 공용 UI 컴포넌트 모듈 경로 | figma-matcher |
 | UI 확인 | UI만 바뀐 변경의 확인 방법 | implement ⑥ |
