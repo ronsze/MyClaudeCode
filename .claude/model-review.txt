@@ -1,0 +1,4 @@
+fable claude-fable-5-1 reviewed
+haiku claude-haiku-4-5 reviewed
+opus claude-opus-5 reviewed
+sonnet claude-sonnet-5 reviewed
