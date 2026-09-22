@@ -3,7 +3,9 @@
   "displayName": "My Claude Code",
   "version": "0.1.0",
   "description": "하네스 작성 규율(harness)·결함 기록(feedback)·증상 진단(diagnose) 스킬과 강제 훅(모델 교체 재검토, 스킬 로드 강제, 에이전트 수정 경계).",
-  "author": { "name": "ronsze", "email": "ljg5846@gmail.com" },
-  "repository": "https://github.com/ronsze/MyClaudeCode",
-  "hooks": "./hooks/hooks.json"
+  "author": {
+    "name": "ronsze",
+    "email": "ljg5846@gmail.com"
+  },
+  "repository": "https://github.com/ronsze/MyClaudeCode"
 }
