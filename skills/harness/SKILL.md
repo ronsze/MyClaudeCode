@@ -92,7 +92,7 @@ CLAUDE.md에서 절차로 자라난 내용은 스킬로 옮긴다.
 
 ## 경계
 
-- 대상: `.claude/**`와 CLAUDE.md, 그리고 이 플러그인 소스(`${CLAUDE_PLUGIN_ROOT}`)에 대한 추가·제거·수정·검토·관리. 프로젝트 `.claude/hooks/`에 복사된 `skill-required.py`·`write-scope.py`는 플러그인 `hooks/`가 정본이다 — 고칠 때 플러그인을 먼저 고치고 복사본을 맞춘다.
+- 대상: `.claude/**`와 CLAUDE.md, 그리고 이 플러그인 소스(`${CLAUDE_PLUGIN_ROOT}`)에 대한 추가·제거·수정·검토·관리. 프로젝트 `.claude/hooks/`에 복사된 `skill-required.py`·`write-scope.py`와 `templates/rules/`에서 복사된 rules는 플러그인이 정본이다 — 고칠 때 플러그인을 먼저 고치고 복사본을 맞춘다. 프로젝트 고유 값은 구성요소 본문에 넣지 않고 CLAUDE.md `## 프로젝트 사실`(항목 표는 `references/claude-md.md`) 또는 구성요소 전용 오버레이(`.claude/trello.md`·`.claude/merge-gates.md`·`.claude/write-scope.json`)에 둔다.
 - 비대상: 하네스를 사용해 수행하는 일반 개발 작업, `docs/**` 등 하네스 밖 문서.
 
 ## 검증
@@ -101,6 +101,7 @@ CLAUDE.md에서 절차로 자라난 내용은 스킬로 옮긴다.
 - 고정·열기: 변경한 항목마다 제6원칙 판정을 적용하고, 고정한 항목은 수단(본문 문장·훅·tools)이 강도에 맞는지, 열어둔 판단은 수행 시점과 결과가 산출물에 드러나는지 대조한다.
 - 규격: `claude plugin validate .claude/skills`가 통과해야 한다. 스킬·에이전트·settings를 고친 뒤 실행한다. 플러그인을 고쳤으면 `claude plugin validate ${CLAUDE_PLUGIN_ROOT}`도 통과해야 한다.
 - 복사본 일치: 플러그인 `hooks/skill-required.py`·`write-scope.py`를 고쳤으면 프로젝트 `.claude/hooks/`의 복사본과 `diff`가 비어야 한다.
+- 프로젝트 사실 참조: 플러그인 구성요소가 `프로젝트 사실 \`<항목>\``으로 참조하는 항목이 `references/claude-md.md`의 표에 전부 있어야 한다 — `grep -rho '프로젝트 사실 \`[^\`]*\`' skills agents | sort -u`로 대조한다.
 - 충돌: 변경한 구성요소가 CLAUDE.md·다른 구성요소의 지시와 모순되지 않는지 대조한다. 같은 대상을 정하는 문장이 두 곳에 있으면 한쪽을 정본으로 남긴다.
 - (시험) 호출 적절성: 이 스킬은 하네스 관련 요청(추가·수정·검토 등)에서 로드되고, 일반 개발 요청에서는 로드되지 않아야 한다.
 

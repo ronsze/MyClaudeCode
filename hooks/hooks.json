@@ -19,6 +19,28 @@
             "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/skill-required.py\" diagnose"
           }
         ]
+      },
+      {
+        "matcher": "mcp__trello__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/skill-required.py\" trello"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/write-scope.py\" --agent docs-sync '^docs/.*[.]md$' '(^|/)README[.]md$' '!^docs/specs/'"
+          },
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/write-scope.py\" --agent test-engineer '(^|/)src/test/' '(^|/)tests?/' '(^|/)__tests__/' '[._]test[.][a-z]+$' 'Test[.][a-z]+$'"
+          }
+        ]
       }
     ]
   }

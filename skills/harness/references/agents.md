@@ -29,7 +29,7 @@
 - **종료 조건**: 언제 끝났다고 판단하는지를 명시한다.
 - **실패 시 행동**: 목적을 달성하지 못하면 우회로를 찾지 않고 실패로 보고하고 멈춘다.
 - **tools**: 목적에 필요한 도구만 allowlist로 지정한다. 목적 밖 도구를 주지 않는다.
-- **경계 강제**: 수정 허용 범위가 파일 경로로 판정되면 본문 지시로 두지 않고 frontmatter `hooks`의 `PreToolUse`(`Edit|Write`)로 막는다 — `.claude/hooks/write-scope.py`에 허용 경로 정규식을 인수로 넘긴다(없으면 플러그인 `hooks/write-scope.py`를 복사한다 — 에이전트 frontmatter에서는 `${CLAUDE_PLUGIN_ROOT}`가 풀리지 않는다). 본문 지시와 사후 `git status` 확인은 강제가 아니다.
+- **경계 강제**: 수정 허용 범위가 파일 경로로 판정되면 본문 지시로 두지 않고 `PreToolUse`(`Edit|Write`) 훅으로 막는다 — `write-scope.py`에 허용 경로 정규식을 인수로 넘긴다. 프로젝트 에이전트는 frontmatter `hooks`에 `.claude/hooks/write-scope.py`(플러그인 `hooks/write-scope.py`의 복사본)로 건다. 플러그인 에이전트는 frontmatter `hooks`를 가질 수 없으므로 플러그인 `hooks/hooks.json`에 `--agent <이름>`으로 건다 — 훅은 stdin `agent_type`으로 그 에이전트 안에서만 판정한다. 프로젝트가 범위를 바꾸려면 `.claude/write-scope.json`의 에이전트 키에 패턴 배열을 둔다. 본문 지시와 사후 `git status` 확인은 강제가 아니다.
 - **model**: 작업 난이도에 맞춰 지정한다. 단순 대조·수집은 하위 모델로 비용을 줄인다.
 - **피드백 경로**: 구성요소가 잘못 판단·동작한 사례는 `.claude/FEEDBACK.md`에 기록한다.
 
@@ -41,7 +41,7 @@ name: <소문자-하이픈>
 description: <무엇을 맡기는지>. <위임해야 하는 상황>. <위임하지 말아야 하는 상황과 그 경우의 처리처>. 위임 메시지에는 <필수 입력>을 반드시 담는다.
 tools: <목적에 필요한 도구만>
 model: <난이도에 맞는 모델>
-hooks:                       # 수정 범위가 경로로 정해지는 에이전트만
+hooks:                       # 수정 범위가 경로로 정해지는 프로젝트 에이전트만 — 플러그인 에이전트는 hooks.json에
   PreToolUse:
     - matcher: Edit|Write
       hooks:
@@ -77,4 +77,4 @@ hooks:                       # 수정 범위가 경로로 정해지는 에이전
 - (시험) 목적 달성: 대표 작업 하나를 실제로 위임해 산출물이 출력 계약과 일치하는지, 종료 조건에서 멈추는지 확인한다.
 - 호출 적절성: description만 읽고 위임 여부를 판단할 수 있는지 — 대상 요청과 비대상 요청 각 한 가지를 놓고 판별되는지 확인한다.
 - tools 검증: 본문 절차가 요구하는 도구가 allowlist에 모두 있는지, 목적 밖 도구가 없는지 대조한다.
-- 경계 훅: 허용 밖 경로의 Edit 입력을 샘플 stdin으로 넘겨 `write-scope.py`가 exit 2로 막는지, 허용 경로는 exit 0인지 확인한다.
+- 경계 훅: 허용 밖 경로의 Edit 입력을 샘플 stdin으로 넘겨 `write-scope.py`가 exit 2로 막는지, 허용 경로는 exit 0인지 확인한다. 플러그인 에이전트는 `agent_type`이 그 이름인 입력으로 확인한다.

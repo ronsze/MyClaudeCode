@@ -23,7 +23,7 @@
 
 ## 작성 규칙
 
-- **훅 하나에 목적 하나**: 한 줄을 넘는 로직은 `.claude/hooks/<name>.sh|py` 스크립트로 분리하고, 스크립트 최상단 주석에 목적을 서술한다(제1원칙 — JSON에는 주석을 둘 수 없다). settings.json에는 `"$CLAUDE_PROJECT_DIR/.claude/hooks/<name>.py"`처럼 절대 경로로 참조한다. 플러그인 `hooks/hooks.json`에서는 `"${CLAUDE_PLUGIN_ROOT}/hooks/<name>.py"`로 참조한다.
+- **훅 하나에 목적 하나**: 한 줄을 넘는 로직은 `.claude/hooks/<name>.sh|py` 스크립트로 분리하고, 스크립트 최상단 주석에 목적을 서술한다(제1원칙 — JSON에는 주석을 둘 수 없다). settings.json에는 `"$CLAUDE_PROJECT_DIR/.claude/hooks/<name>.py"`처럼 절대 경로로 참조한다. 플러그인 `hooks/hooks.json`에서는 `"${CLAUDE_PLUGIN_ROOT}/hooks/<name>.py"`로 참조한다. 플러그인 훅은 서브에이전트 안에서도 발화하며 stdin에 `agent_type`이 실리므로, 특정 에이전트만 대상이면 스크립트가 그 필드로 걸러야 한다.
 - **matcher를 좁게**: 경계는 matcher(+`if`)가 강제한다. 빈 matcher로 전 도구에 걸지 않는다.
 - **차단은 exit 2 + stderr 이유**: 모델이 왜 막혔는지 읽고 수정할 수 있게 이유를 쓴다.
 - **실패를 설계한다**: 스크립트 오류가 차단으로 오인되지 않게 한다 — 판정 불가 시 exit 0(통과)인지 exit 2(차단)인지 목적에 맞게 정하고 주석에 남긴다.
