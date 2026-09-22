@@ -14,7 +14,7 @@ Claude Code 플러그인. 코드 변경·병합·진단·리뷰·테스트 절�
 | `skills/feedback` | 하네스 결함 사례를 프로젝트 `.claude/FEEDBACK.md`에 기록 |
 | `agents/code-reviewer` | 변경 코드를 6기준으로 점검해 발견 목록 보고 (읽기 전용) |
 | `agents/test-engineer` | 지정 범위의 단위 테스트 실행·작성·보수 (테스트 소스만 수정) |
-| `agents/figma-matcher` | Figma 시안 요소를 기존 UI 컴포넌트와 대조해 재사용·확장·신규 판정 |
+| `agents/design-matcher` | 디자인 시안(Figma·이미지·문서) 요소를 기존 UI 컴포넌트와 대조해 재사용·확장·신규 판정 |
 | `hooks/model-review.py` | SessionStart — 모델 별칭이 가리키는 모델이 바뀌면 하네스 재검토를 요청. 상태는 프로젝트 `.claude/model-review.txt` |
 | `hooks/skill-required.py` | PreToolUse — 지정 스킬을 로드하지 않은 도구 호출 차단 (crashlytics → diagnose, trello → trello) |
 | `hooks/write-scope.py` | PreToolUse Edit\|Write — 에이전트별 허용 경로 밖 수정 차단 (test-engineer). 범위 변경은 `.claude/write-scope.json` |

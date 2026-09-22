@@ -2,7 +2,7 @@
   "name": "my-claude-code",
   "displayName": "My Claude Code",
   "version": "0.2.0",
-  "description": "코드 변경(implement)·병합(merge)·진단(diagnose)·Trello(trello) 절차와 하네스 규율(harness·feedback) 스킬, 리뷰·테스트·Figma 대조 에이전트, 강제 훅(모델 교체 재검토·스킬 로드·에이전트 수정 경계). 프로젝트 고유 값은 CLAUDE.md `## 프로젝트 사실`에서 읽는다.",
+  "description": "코드 변경(implement)·병합(merge)·진단(diagnose)·Trello(trello) 절차와 하네스 규율(harness·feedback) 스킬, 리뷰·테스트·시안 대조 에이전트, 강제 훅(모델 교체 재검토·스킬 로드·에이전트 수정 경계). 프로젝트 고유 값은 CLAUDE.md `## 프로젝트 사실`에서 읽는다.",
   "author": {
     "name": "ronsze",
     "email": "ljg5846@gmail.com"
