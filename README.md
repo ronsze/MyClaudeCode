@@ -18,7 +18,6 @@ Claude Code 플러그인. 코드 변경·병합·진단·리뷰·테스트 절�
 | `hooks/model-review.py` | SessionStart — 모델 별칭이 가리키는 모델이 바뀌면 하네스 재검토를 요청. 상태는 프로젝트 `.claude/model-review.txt` |
 | `hooks/skill-required.py` | PreToolUse — 지정 스킬을 로드하지 않은 도구 호출 차단 (crashlytics → diagnose, trello → trello) |
 | `hooks/write-scope.py` | PreToolUse Edit\|Write — 에이전트별 허용 경로 밖 수정 차단 (test-engineer). 범위 변경은 `.claude/write-scope.json` |
-| `templates/rules/` | 프로젝트 `.claude/rules/`에 복사해 채우는 경로 규칙 (플러그인은 rules를 실을 수 없다) |
 
 ## 프로젝트 쪽에 두는 것
 
@@ -29,7 +28,6 @@ Claude Code 플러그인. 코드 변경·병합·진단·리뷰·테스트 절�
 | `.claude/merge-gates.md` | 프로젝트 고유 병합 사전 검사 | `skills/merge/references/merge-gates.md` |
 | `.claude/write-scope.json` | 에이전트별 수정 허용 경로 재정의 (선택) | `{"test-engineer": ["<정규식>", "!<제외>"]}` |
 | `.claude/FEEDBACK.md` | 하네스 결함 기록 | feedback 스킬이 템플릿에서 만든다 |
-| `.claude/rules/*.md` | 경로 규칙 | `templates/rules/`에서 복사 |
 
 구성요소는 필요한 항목이 없으면 추측하지 않고 묻는다.
 

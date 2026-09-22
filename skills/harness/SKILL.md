@@ -92,7 +92,7 @@ CLAUDE.md에서 절차로 자라난 내용은 스킬로 옮긴다.
 
 ## 경계
 
-- 대상: `.claude/**`와 CLAUDE.md, 그리고 이 플러그인 소스(`${CLAUDE_PLUGIN_ROOT}`)에 대한 추가·제거·수정·검토·관리. 프로젝트 `.claude/hooks/`에 복사된 `skill-required.py`·`write-scope.py`와 `templates/rules/`에서 복사된 rules는 플러그인이 정본이다 — 고칠 때 플러그인을 먼저 고치고 복사본을 맞춘다. 프로젝트 고유 값은 구성요소 본문에 넣지 않고 CLAUDE.md `## 프로젝트 사실`(항목 표는 `references/claude-md.md`) 또는 구성요소 전용 오버레이(`.claude/trello.md`·`.claude/merge-gates.md`·`.claude/write-scope.json`)에 둔다.
+- 대상: `.claude/**`와 CLAUDE.md, 그리고 이 플러그인 소스(`${CLAUDE_PLUGIN_ROOT}`)에 대한 추가·제거·수정·검토·관리. 프로젝트 `.claude/hooks/`에 복사된 `skill-required.py`·`write-scope.py`는 플러그인이 정본이다 — 고칠 때 플러그인을 먼저 고치고 복사본을 맞춘다. 프로젝트 고유 값은 구성요소 본문에 넣지 않고 CLAUDE.md `## 프로젝트 사실`(항목 표는 `references/claude-md.md`) 또는 구성요소 전용 오버레이(`.claude/trello.md`·`.claude/merge-gates.md`·`.claude/write-scope.json`)에 둔다.
 - 비대상: 하네스를 사용해 수행하는 일반 개발 작업, 하네스 밖 문서.
 
 ## 검증
