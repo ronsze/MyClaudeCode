@@ -1,0 +1,15 @@
+{
+  "name": "my-claude-code",
+  "description": "ronsze의 Claude Code 플러그인.",
+  "owner": {
+    "name": "ronsze",
+    "email": "ljg5846@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "my-claude-code",
+      "source": "./",
+      "description": "하네스 작성 규율·결함 기록·증상 진단 스킬과 강제 훅."
+    }
+  ]
+}
