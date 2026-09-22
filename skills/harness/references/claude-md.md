@@ -23,12 +23,13 @@ my-claude-code 플러그인의 스킬·에이전트는 프로젝트 고유 값�
 | 항목 | 값 | 쓰는 곳 |
 |---|---|---|
 | 기본 브랜치 | 브랜치 이름 | implement ③, merge |
+| 작업 브랜치 | 작업 브랜치 이름 형식 | implement ③ |
 | 컴파일 명령 | 영향 모듈만 컴파일하는 명령 형태 | implement ③·④ |
 | 빌드 명령 | 전체 빌드 | merge |
 | 테스트 명령 | 전체 실행 형태와 클래스 필터 형태 | merge, test-engineer |
 | 커밋 제목 | 제목 정규식 | merge |
 | 잔류물 패턴 | 병합 diff에서 막을 패턴 | merge |
-| 계약 | implement 수준 판정에서 계약으로 보는 것의 목록 | implement |
+| 계약 | implement 수준 판정에서 계약으로 보는 것의 목록 — 프로젝트 아키텍처가 정한다 | implement |
 | 코드 스타일 | 문서 경로 | implement ④, code-reviewer |
 | 아키텍처 | 문서 경로 | code-reviewer |
 | 테스트 문서 | 문서 경로 | test-engineer, implement ② |
