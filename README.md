@@ -6,7 +6,7 @@ Claude Code 플러그인. 코드 변경·병합·진단·리뷰·테스트 절�
 
 | 구성요소 | 역할 |
 |---|---|
-| `skills/implement` | 코드 변경 요청을 수준(탐색·경미·경계 내·표준·복합)에 맞는 단계 조합으로 수행. 복합 계획 파일 형식은 `references/plan.md` |
+| `skills/implement` | 코드 변경 요청을 수준(탐색·경미·경계 내·표준·복합)에 맞는 단계 조합으로 수행. TDD 판정 포함. 복합 계획 문서(기능별 spec·design·plan) 형식은 `references/plan.md` |
 | `skills/merge` | `/merge` — 브랜치 병합과 사전 검사·빌드·테스트 게이트. 프로젝트 고유 게이트는 `.claude/merge-gates.md` |
 | `skills/diagnose` | 증상(Crashlytics·제보)에서 원인을 특정해 보고 |
 | `skills/trello` | Trello 보드 카드·댓글 작업. 보드 규약은 `.claude/trello.md` |

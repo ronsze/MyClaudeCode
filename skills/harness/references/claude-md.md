@@ -33,7 +33,7 @@ my-claude-code 플러그인의 스킬·에이전트는 프로젝트 고유 값�
 | 코드 스타일 | 문서 경로 (있을 때만) | implement, code-reviewer |
 | 아키텍처 | 문서 경로 (있을 때만) | implement, code-reviewer |
 | 테스트 문서 | 문서 경로 (있을 때만) | implement, test-engineer |
-| 스펙 위치 | 복합 수준 계획 파일을 두는 디렉토리 | implement ② |
+| 스펙 위치 | 복합 수준 계획 문서(기능별 디렉토리)를 두는 디렉토리 | implement ② |
 | API 스펙 | 실제 응답 스키마를 확인하는 방법 | implement ① |
 | 공용 UI | 공용 UI 컴포넌트 모듈 경로 | design-matcher |
 | UI 확인 | UI만 바뀐 변경의 확인 방법 | implement ⑥ |
